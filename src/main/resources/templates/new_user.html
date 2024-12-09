@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kullanıcı Yönetim Sistemi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mt-4">Kullanıcı Yönetim Sistemi</h1>
+    <hr>
+    <h2>Kullanıcı Ekle</h2>
+
+    <form th:action="@{/saveUser}" th:object="${user}" method="POST" class="row g-3">
+        <div class="col-md-4 mb-3">
+            <input type="text" th:field="*{firstName}" placeholder="Kullanıcı Adı" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <input type="text" th:field="*{lastName}" placeholder="Kullanıcı Soyadı" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <input type="text" th:field="*{email}" placeholder="Kullanıcı Email" class="form-control">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-info">Kaydet</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}" class="d-block mt-3">Kullanıcı Ekranına Geri Dön</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
